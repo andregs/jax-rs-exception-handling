@@ -16,13 +16,18 @@ All the instructions are documented as comments in the source code.
 Happy reading!
 
 # Build
-mvn clean package && docker build -t com.andregs/jax-rs-exception-handling .
+```
+$ mvn clean package && docker build -t com.andregs/jax-rs-exception-handling .
+```
 
 # RUN
-docker rm -f jax-rs-exception-handling || true && docker run -d -p 8080:8080 -p 4848:4848 --name jax-rs-exception-handling com.andregs/jax-rs-exception-handling 
+```
+$ docker rm -f jax-rs-exception-handling || true 
+$ docker run -d -p 8080:8080 -p 4848:4848 --name jax-rs-exception-handling com.andregs/jax-rs-exception-handling 
+```
 
-Read the server logs with `docker logs jax-rs-exception-handling`
+Read the server logs with `docker logs jax-rs-exception-handling`.
 
 Or you can simply build the war and deploy it in a Payara 5 or Glassfish app server.
 
-* This project was created with Adam Bien's archetype: https://github.com/AdamBien/javaee8-essentials-archetype
+This project was created with Adam Bien's archetype: https://github.com/AdamBien/javaee8-essentials-archetype
